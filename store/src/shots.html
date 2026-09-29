@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8">
+<style>
+  :root { --blue:#0a66c2; --ink:#1d2226; --muted:#5e6b76; --line:#dfe3e7; --bar:#f3f6f8; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; width:1280px; height:800px; overflow:hidden; font-family:-apple-system,"Segoe UI",Roboto,system-ui,sans-serif; color:var(--ink); }
+  body { background:linear-gradient(135deg,#eef3f8 0%,#dde8f3 100%); display:flex; align-items:center; padding:0 72px; gap:64px; }
+  .pitch { flex:0 0 440px; }
+  .logo { display:flex; align-items:center; gap:12px; font-weight:700; font-size:22px; color:var(--blue); margin-bottom:36px; }
+  .logo img { width:44px; height:44px; }
+  h1 { font-size:54px; line-height:1.08; margin:0 0 22px; letter-spacing:-1px; }
+  h1 em { font-style:normal; color:var(--blue); }
+  .sub { font-size:22px; line-height:1.45; color:var(--muted); margin:0; }
+  .stage { flex:1; display:flex; flex-direction:column; gap:18px; }
+  .card { background:#fff; border:1px solid var(--line); border-radius:10px; padding:18px 20px; box-shadow:0 2px 10px rgba(0,0,0,.05); }
+  .who { display:flex; gap:12px; align-items:center; margin-bottom:12px; }
+  .av { width:44px; height:44px; border-radius:50%; flex:none; }
+  .name { font-weight:600; font-size:15px; } .meta { font-size:13px; color:var(--muted); }
+  .bar { display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 10px; background:var(--bar); border-left:3px solid var(--blue); border-radius:6px; padding:10px 14px; font-size:16px; line-height:1.45; }
+  .bar .m,.bar .l { color:var(--blue); } .bar .l { font-weight:600; } .bar .h { flex:1 1 260px; }
+  .bar button { margin-left:auto; font:600 14px/1.4 inherit; font-family:inherit; color:var(--blue); background:none; border:1px solid currentColor; border-radius:14px; padding:3px 12px; }
+  .slop { font-size:15px; line-height:1.55; white-space:pre-line; margin-top:12px; color:#333; }
+  .fade { max-height:250px; overflow:hidden; -webkit-mask-image:linear-gradient(#000 70%,transparent); }
+  .tag { display:inline-block; font-size:13px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:4px 10px; border-radius:12px; margin-bottom:10px; }
+  .before { background:#fde8e4; color:#b24020; } .after { background:#e3effa; color:var(--blue); }
+  .popup { width:340px; align-self:center; background:#fff; border-radius:12px; box-shadow:0 12px 40px rgba(0,0,0,.18); font-size:14px; overflow:hidden; }
+  .popup .b { padding:14px 16px; border-bottom:1px solid var(--line); }
+  .popup .row { display:flex; justify-content:space-between; align-items:center; }
+  .popup h2 { margin:0; font-size:17px; }
+  .sw { width:40px; height:22px; border-radius:11px; background:var(--blue); position:relative; } .sw::after { content:""; position:absolute; right:3px; top:3px; width:16px; height:16px; border-radius:50%; background:#fff; }
+  .ok { color:var(--blue); font-weight:600; margin-top:8px; }
+  .muted { color:var(--muted); font-style:italic; }
+  .popup p { margin:0 0 5px; } .popup strong { font-variant-numeric:tabular-nums; }
+  .big { font-size:30px; color:var(--blue); font-weight:700; }
+  .scene { display:none; } body[data-s="1"] .s1, body[data-s="2"] .s2, body[data-s="3"] .s3, body[data-s="4"] .s4 { display:contents; }
+  /* promo tile */
+  body[data-s="tile"] { width:440px; height:280px; padding:0 36px; gap:0; background:linear-gradient(135deg,#0a66c2,#084a8e); color:#fff; }
+  body[data-s="tile"] .t { display:flex !important; flex-direction:column; gap:10px; }
+  .t { display:none; } .t .logo { color:#fff; margin:0; font-size:26px; } .t .logo img { width:52px; height:52px; }
+  .t .line { font-size:26px; font-weight:700; line-height:1.2; } .t .small { font-size:15px; opacity:.85; }
+  .credit { position:fixed; left:72px; bottom:36px; font-size:15px; color:var(--muted); }
+  .credit b { color:var(--blue); }
+  body[data-s="tile"] .credit { left:36px; bottom:18px; font-size:12px; color:rgba(255,255,255,.8); }
+  body[data-s="tile"] .credit b { color:#fff; }
+</style></head>
+<body>
+<div class="credit">Gratuit. Fait par <b>Senzu</b> · senzu.tech</div>
+<div class="t">
+  <div class="logo"><img src="icon-white.svg" alt="">Slopcut</div>
+  <div class="line">Chaque post LinkedIn,<br>en une phrase.</div>
+  <div class="small">100 % local, avec Gemini Nano.</div>
+</div>
+
+<!-- Scene 1 -->
+<div class="scene s1">
+  <div class="pitch">
+    <div class="logo"><img src="../../icons/icon128.png" alt="">Slopcut</div>
+    <h1>Le fil LinkedIn,<br>lu en <em>30 secondes</em>.</h1>
+    <p class="sub">Chaque post long devient une seule phrase, fidèle à ce que dit l'auteur. L'original reste à un clic.</p>
+  </div>
+  <div class="stage">
+    <div class="card"><div class="who"><div class="av" style="background:#c9d7e6"></div><div><div class="name">Camille Martin</div><div class="meta">CEO · 2 h</div></div></div>
+      <div class="bar"><span class="m">✂</span><span class="l">TL;DR</span><span class="h">Sa startup a levé 2 M€ et recrute deux commerciaux à Lyon.</span><button>Voir le slop (412 mots)</button></div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#e6d3c9"></div><div><div class="name">Thomas Leroy</div><div class="meta">Coach en leadership · 5 h</div></div></div>
+      <div class="bar"><span class="m">✂</span><span class="l">TL;DR</span><span class="h">Ce post ne dit rien.</span><button>Voir le slop (687 mots)</button></div></div>
+    <div class="card"><div class="who"><div class="av" style="background:#d0e3cf"></div><div><div class="name">Inès Bernard</div><div class="meta">Product designer · 1 j</div></div></div>
+      <div class="bar"><span class="m">✂</span><span class="l">TL;DR</span><span class="h">Elle quitte son poste et cherche une mission freelance en design produit.</span><button>Voir le slop (358 mots)</button></div></div>
+  </div>
+</div>
+
+<!-- Scene 2 -->
+<div class="scene s2">
+  <div class="pitch">
+    <div class="logo"><img src="../../icons/icon128.png" alt="">Slopcut</div>
+    <h1><em>600 mots</em>.<br>Une phrase.</h1>
+    <p class="sub">Storytelling, « je suis ravi d'annoncer », questions d'engagement : Slopcut garde l'info, jette le reste.</p>
+  </div>
+  <div class="stage">
+    <div class="card"><span class="tag before">Avant</span>
+      <div class="slop fade">Il y a 10 ans, on m'a dit que je n'y arriverais jamais.
+
+Aujourd'hui, je suis ravi d'annoncer une nouvelle étape.
+
+Ce matin, en prenant mon café, j'ai repensé à tout le chemin parcouru. Les nuits blanches. Les doutes. Les « non ».
+
+Et puis un jour, tout a changé.
+
+Ce que j'ai appris ? Trois choses.
+1. La résilience n'est pas une option.
+2. …</div></div>
+    <div class="card"><span class="tag after">Après</span>
+      <div class="bar"><span class="m">✂</span><span class="l">TL;DR</span><span class="h">Il devient directeur commercial chez Nexa après dix ans dans la vente.</span><button>Voir le slop (604 mots)</button></div></div>
+  </div>
+</div>
+
+<!-- Scene 3 -->
+<div class="scene s3">
+  <div class="pitch">
+    <div class="logo"><img src="../../icons/icon128.png" alt="">Slopcut</div>
+    <h1>L'original,<br>à <em>un clic</em>.</h1>
+    <p class="sub">Rien n'est supprimé. « Voir le slop » réaffiche le post complet, « Recouper » le replie.</p>
+  </div>
+  <div class="stage">
+    <div class="card"><div class="who"><div class="av" style="background:#c9d7e6"></div><div><div class="name">Camille Martin</div><div class="meta">CEO · 2 h</div></div></div>
+      <div class="bar"><span class="m">✂</span><span class="l">TL;DR</span><span class="h">Sa startup a levé 2 M€ et recrute deux commerciaux à Lyon.</span><button>Recouper</button></div>
+      <div class="slop">🚀 Je suis tellement fière de vous annoncer que nous venons de boucler notre première levée de fonds : 2 M€ !
+
+Quand on a lancé l'aventure il y a trois ans dans un garage, personne n'y croyait. Aujourd'hui, grâce à une équipe incroyable, on passe un cap.
+
+Et ce n'est que le début : on recrute deux commerciaux à Lyon. Intéressé·e ? Parlons-en en commentaire 👇</div></div>
+  </div>
+</div>
+
+<!-- Scene 4 -->
+<div class="scene s4">
+  <div class="pitch">
+    <div class="logo"><img src="../../icons/icon128.png" alt="">Slopcut</div>
+    <h1><em>100 % local</em>.<br>Zéro serveur.</h1>
+    <p class="sub">Les résumés sont générés par Gemini Nano, directement dans Chrome. Aucun post, aucune donnée ne quitte ta machine.</p>
+  </div>
+  <div class="popup">
+    <div class="b"><div class="row"><h2>✂ Slopcut</h2><div class="sw"></div></div>
+      <p class="muted" style="margin-top:4px">Respecte ton temps. LinkedIn a été fait pour ça.</p>
+      <p class="ok">Gemini Nano prêt.</p></div>
+    <div class="b"><p>Posts coupés : <strong>148</strong></p><p>Mots évités : <strong>61 204</strong></p>
+      <p>Minutes de vie récupérées :</p><p class="big">306</p>
+      <p class="muted">LinkedIn a été conçu pour respecter ton temps. On l'aide.</p></div>
+    <div class="b"><div class="row"><span>Langue du résumé</span><span>Français ▾</span></div>
+      <div class="row" style="margin-top:6px"><span>Ton</span><span>◉ sec ○ cynique</span></div></div>
+  </div>
+</div>
+<script>document.body.dataset.s = location.hash.slice(1) || '1';</script>
+</body></html>

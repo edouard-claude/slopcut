@@ -1,0 +1,58 @@
+{
+  "manifest_version": 3,
+  "name": "Slopcut : résumés en une phrase pour LinkedIn",
+  "version": "1.0.0",
+  "minimum_chrome_version": "138",
+  "description": "Résume chaque post du fil en une phrase, 100 % en local avec Gemini Nano. Aucune donnée ne quitte ta machine.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.linkedin.com/*"
+  ],
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.linkedin.com/*"
+      ],
+      "js": [
+        "src/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "src/selectors.js",
+        "src/hash.js",
+        "src/settings.js",
+        "src/ui.css"
+      ],
+      "matches": [
+        "https://www.linkedin.com/*"
+      ]
+    }
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "Slopcut"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "short_name": "Slopcut",
+  "homepage_url": "https://senzu.tech/",
+  "author": "Senzu"
+}

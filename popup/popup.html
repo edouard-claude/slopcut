@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Slopcut</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="block">
+    <div class="row">
+      <h1>✂ Slopcut</h1>
+      <label class="switch" title="Activer / désactiver">
+        <input type="checkbox" id="enabled">
+        <span class="slider" aria-hidden="true"></span>
+        <span class="sr">Activer Slopcut</span>
+      </label>
+    </div>
+    <p class="tagline">Respecte ton temps. LinkedIn a été fait pour ça.</p>
+    <div id="model" class="model" data-state="checking">
+      <p id="model-text">Vérification de Gemini Nano…</p>
+      <button type="button" id="download" hidden>Télécharger Gemini Nano (~4 Go, une seule fois)</button>
+      <progress id="progress" max="100" value="0" hidden></progress>
+    </div>
+  </header>
+
+  <section class="block stats">
+    <p>Posts coupés : <strong id="stat-posts">0</strong></p>
+    <p>Mots évités : <strong id="stat-words">0</strong></p>
+    <p>Minutes de vie récupérées : <strong id="stat-minutes">0</strong></p>
+    <p class="irony">LinkedIn a été conçu pour respecter ton temps. On l'aide.</p>
+  </section>
+
+  <section class="block settings">
+    <label class="field">
+      <span>Langue du résumé</span>
+      <select id="lang">
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+        <option value="es">Español</option>
+        <option value="de">Deutsch</option>
+        <option value="ja">日本語</option>
+      </select>
+    </label>
+    <label class="field">
+      <span>Seuil (caractères)</span>
+      <input type="number" id="threshold" min="80" max="1000" step="10">
+    </label>
+    <fieldset class="field">
+      <legend>Ton</legend>
+      <label><input type="radio" name="tone" value="sec"> sec</label>
+      <label><input type="radio" name="tone" value="cynique"> cynique</label>
+    </fieldset>
+    <button type="button" id="clear-cache" class="secondary">Vider le cache</button>
+  </section>
+
+  <footer class="credits">
+    Gratuit, fait avec amour et ironie par <a href="https://senzu.tech/" target="_blank" rel="noopener">Senzu</a>.
+  </footer>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
