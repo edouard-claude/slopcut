@@ -26,6 +26,10 @@ Slopcut n'effectue aucune requête réseau, n'utilise aucun serveur, aucune anal
 
 Le premier téléchargement du modèle Gemini Nano est effectué par Chrome lui-même, selon les conditions de Google, à ta demande explicite depuis le popup.
 
+## Liens vers senzu.tech
+
+Les liens vers le site de Senzu présents dans l'extension (popup, page de l'extension) contiennent des paramètres UTM (`utm_source=slopcut`, etc.). Ils indiquent seulement que la visite vient de Slopcut ; aucune donnée personnelle ni aucun contenu LinkedIn n'y figure. Ils ne sont transmis que si tu cliques.
+
 ## Éditeur
 
 Slopcut est un projet gratuit édité par [Senzu](https://senzu.tech/).

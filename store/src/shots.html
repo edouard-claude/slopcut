@@ -38,13 +38,15 @@
   body[data-s="tile"] .t { display:flex !important; flex-direction:column; gap:10px; }
   .t { display:none; } .t .logo { color:#fff; margin:0; font-size:26px; } .t .logo img { width:52px; height:52px; }
   .t .line { font-size:26px; font-weight:700; line-height:1.2; } .t .small { font-size:15px; opacity:.85; }
-  .credit { position:fixed; left:72px; bottom:36px; font-size:15px; color:var(--muted); }
+  .credit { position:fixed; left:72px; bottom:30px; display:flex; align-items:center; gap:10px; font-size:16px; color:var(--muted); }
+  .credit img { width:36px; height:36px; }
+  body[data-s="tile"] .credit img { width:22px; height:22px; filter:drop-shadow(0 0 1px rgba(255,255,255,.6)); }
   .credit b { color:var(--blue); }
-  body[data-s="tile"] .credit { left:36px; bottom:18px; font-size:12px; color:rgba(255,255,255,.8); }
+  body[data-s="tile"] .credit { left:36px; bottom:14px; gap:6px; font-size:12px; color:rgba(255,255,255,.8); }
   body[data-s="tile"] .credit b { color:#fff; }
 </style></head>
 <body>
-<div class="credit">Gratuit. Fait par <b>Senzu</b> · senzu.tech</div>
+<div class="credit"><img src="../../assets/senzu.png" alt=""><span>Gratuit. Fait par <b>Senzu</b> · senzu.tech</span></div>
 <div class="t">
   <div class="logo"><img src="icon-white.svg" alt="">Slopcut</div>
   <div class="line">Chaque post LinkedIn,<br>en une phrase.</div>

@@ -47,3 +47,11 @@ Une vraie capture du fil avec l'extension active peut remplacer `screenshot-1.pn
 - Nom : « … pour LinkedIn » est la forme tolérée pour une marque tierce ; ne pas mettre LinkedIn en premier mot ni utiliser son logo.
 - La mention « Slopcut n'est ni affilié à LinkedIn ni approuvé par LinkedIn » doit rester dans la description.
 - L'examinateur doit pouvoir faire tourner Gemini Nano : les instructions de test sont dans `store/listing.md`.
+
+## Crédits Senzu et suivi
+
+- Logo : `assets/senzu.png` (source), `popup/senzu.png` (64 px, embarqué dans l'extension).
+- Les liens vers senzu.tech portent des UTM pour mesurer le trafic venu du plugin :
+  `utm_source=slopcut&utm_medium=chrome_extension&utm_campaign=slopcut_linkedin`, avec
+  `utm_content=popup_credits` (pied du popup) ou `utm_content=homepage_url` (lien « Site Web » du Store et de `chrome://extensions`).
+- À retrouver dans l'outil d'analytics de senzu.tech, filtré sur `utm_source = slopcut`.

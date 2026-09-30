@@ -2,7 +2,10 @@
 
 Extension Chrome (Manifest V3, vanilla JS, zéro build) qui remplace le corps de chaque post LinkedIn long par une seule phrase générée **en local** par Gemini Nano. L'original reste à un clic. Aucune requête réseau, aucune télémétrie, aucune clé API.
 
-Gratuit. Fait par [Senzu](https://senzu.tech/).
+<a href="https://senzu.tech/"><img src="assets/senzu.png" alt="Senzu" width="40" align="left"></a>
+
+Gratuit. Fait avec amour et ironie par **[Senzu](https://senzu.tech/)**.
+<br clear="left">
 
 ![Slopcut](store/screenshots/screenshot-1.png)
 
